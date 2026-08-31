@@ -271,13 +271,15 @@
         .breadcrumb {
             display: flex;
             align-items: center;
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 12px 16px;
         }
 
         .breadcrumb-item {
             font-weight: 800;
             color: #e0e7ff;
             text-decoration: none;
+            line-height: 1.3;
         }
 
         .breadcrumb-item.active {
@@ -836,6 +838,8 @@
                             {% endif %}
                             {% if p.termo_pdf %}<a class="btn secondary" href="/pdf/termo/{{ p.codigo }}?v={{ p.atualizado_em or p.criado_em or '' }}" target="_blank">PDF Termo</a>{% endif %}
                             {% if p.pdf_ressalvas %}<a class="btn secondary" href="/pdf/ressalvas/{{ p.codigo }}?v={{ p.atualizado_em or p.criado_em or '' }}" target="_blank">PDF Ressalvas</a>{% endif %}
+                            {% if p.recebimento_pdf %}<a class="btn secondary" href="/pdf/recebimento/{{ p.codigo }}?v={{ p.atualizado_em or p.criado_em or '' }}" target="_blank">PDF Recebimento</a>{% endif %}
+                            {% if p.treinamento_pdf %}<a class="btn secondary" href="/pdf/treinamento/{{ p.codigo }}?v={{ p.atualizado_em or p.criado_em or '' }}" target="_blank">PDF Treinamento</a>{% endif %}
                             {% if p.pdf_final %}<a class="btn secondary" href="/pdf/final/{{ p.codigo }}?v={{ p.atualizado_em or p.criado_em or '' }}" target="_blank">PDF Final</a>{% endif %}
                         </div>
                     </td>
